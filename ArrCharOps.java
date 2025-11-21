@@ -177,9 +177,10 @@ public class ArrCharOps {
      
 
     public static int numiricalStr (String str){
+        String newStr = str.toLowerCase();
         int numiricalStr = 0;
         for(int i = 0; i < str.length(); i++){
-            numiricalStr += str.charAt(i);
+            numiricalStr += newStr.charAt(i);
         }
         return numiricalStr;
     }
