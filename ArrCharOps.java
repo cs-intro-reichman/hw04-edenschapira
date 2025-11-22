@@ -177,10 +177,13 @@ public class ArrCharOps {
      
 
     public static int numiricalStr (String str){
-        String newStr = str.toLowerCase();
         int numiricalStr = 0;
         for(int i = 0; i < str.length(); i++){
-            numiricalStr += newStr.charAt(i);
+            if(str.charAt(i) > 90){ //if the character is uppercase
+                numiricalStr += str.charAt(i) - 32;
+            } else {
+                numiricalStr += str.charAt(i);
+            }
         }
         return numiricalStr;
     }
