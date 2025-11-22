@@ -163,28 +163,45 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        int numiricalStr1 = numiricalStr(str1);
-        int numiricalStr2 = numiricalStr(str2);
-        if (numiricalStr1 < numiricalStr2){
-            return -1;
-        } else if (numiricalStr1 > numiricalStr2){
-            return 1;
-        } else if (numiricalStr1 == numiricalStr2){
-            return 0;
-        }
+        if (str1 == null || str2 == null) {
         return -2;
-    }
-     
-
-    public static int numiricalStr (String str){
-        int numiricalStr = 0;
-        for(int i = 0; i < str.length(); i++){
-            if(str.charAt(i) > 90){ //if the character is uppercase
-                numiricalStr += str.charAt(i) - 32;
+        }
+    int length1 = str1.length();
+    int length2 = str2.length();
+    int limit = Math.min(length1, length2);
+    for (int i = 0; i < limit; i++) {  // Compare characters one by one
+        char c1 = str1.charAt(i);
+        char c2 = str2.charAt(i);
+        if (c1 != c2) {
+            if (c1 < c2) {
+                return -1;
             } else {
-                numiricalStr += str.charAt(i);
+                return 1;
             }
         }
-        return numiricalStr;
     }
+    if (length1 < length2) {
+        return -1;
+    } else if (length1 > length2) {
+        return 1;
+    }
+        // int numiricalStr1 = numiricalStr(str1);
+        // int numiricalStr2 = numiricalStr(str2);
+        // if (numiricalStr1 < numiricalStr2){
+        //     return -1;
+        // } else if (numiricalStr1 > numiricalStr2){
+        //     return 1;
+        // }
+     return 0;
+    }
+   
+     
+
+    // public static int numiricalStr (String str){
+    //     int numiricalStr = 0;
+    //     for(int i = 0; i < str.length(); i++){
+    //          numiricalStr += str.charAt(i);
+    //     }
+    //     return numiricalStr;
+    // }
 }
