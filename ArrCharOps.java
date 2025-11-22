@@ -163,7 +163,7 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        if (str1 == null || str2 == null) {
+        if (str1 == null || str2 == null || str1.length() == 0 || str2.length() == 0) {
         return -2;
         }
     int length1 = str1.length();
