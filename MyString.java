@@ -32,10 +32,15 @@ public class MyString {
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        if(str1.length() < str2.length()){
+        int str1Length = str1.length();
+        int str2Length = str2.length();
+        if(str1Length == 0 && str2Length == 0){
+            return true;
+        }
+        if(str1Length < str2Length){
             return false;
         }
-        for (int i = 0; i < str2.length(); i++){
+        for (int i = 0; i < str2Length; i++){
             if (str1.indexOf(str2.charAt(i)) == -1) {
                 return false;          
             }
