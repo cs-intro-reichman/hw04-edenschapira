@@ -16,8 +16,9 @@ public class Primes {
                 numberOfPrimes++;
             }
         }
+        double percentage = (double) numberOfPrimes / range * 100;
         System.out.println("There are " +numberOfPrimes +" primes between 2 and " +
-        range +" (" +(numberOfPrimes / range * 100) +"% are primes)");
+        range +" (" +(int) percentage +"% are primes)");
     }
 
     public static void setArrayToTrue (boolean[] arr){
