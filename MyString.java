@@ -37,6 +37,9 @@ public class MyString {
         if(str1Length == 0 && str2Length == 0){
             return true;
         }
+        if(str2Length == 0 && str1Length > 0){
+            return true;
+        }
         if(str1Length < str2Length){
             return false;
         }
