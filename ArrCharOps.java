@@ -166,42 +166,43 @@ public class ArrCharOps {
         if (str1 == null || str2 == null || str1.length() == 0 || str2.length() == 0) {
         return -2;
         }
-    int length1 = str1.length();
-    int length2 = str2.length();
-    int limit = Math.min(length1, length2);
-    for (int i = 0; i < limit; i++) {  // Compare characters one by one
-        char c1 = str1.charAt(i);
-        char c2 = str2.charAt(i);
-        if (c1 != c2) {
-            if (c1 < c2) {
-                return -1;
-            } else {
-                return 1;
-            }
+    // int length1 = str1.length();
+    // int length2 = str2.length();
+    // int limit = Math.min(length1, length2);
+    // for (int i = 0; i < limit; i++) {  // Compare characters one by one
+    //     char c1 = str1.charAt(i);
+    //     char c2 = str2.charAt(i);
+    //     if (c1 != c2) {
+    //         if (c1 < c2) {
+    //             return -1;
+    //         } else {
+    //             return 1;
+    //         }
+    //     }
+    // }
+    // if (length1 < length2) {
+    //     return -1;
+    // } else if (length1 > length2) {
+    //     return 1;
+    // }
+
+        int numiricalStr1 = numiricalStr(str1);
+        int numiricalStr2 = numiricalStr(str2);
+        if (numiricalStr1 < numiricalStr2){
+            return -1;
+        } else if (numiricalStr1 > numiricalStr2){
+            return 1;
         }
-    }
-    if (length1 < length2) {
-        return -1;
-    } else if (length1 > length2) {
-        return 1;
-    }
-        // int numiricalStr1 = numiricalStr(str1);
-        // int numiricalStr2 = numiricalStr(str2);
-        // if (numiricalStr1 < numiricalStr2){
-        //     return -1;
-        // } else if (numiricalStr1 > numiricalStr2){
-        //     return 1;
-        // }
      return 0;
     }
    
      
 
-    // public static int numiricalStr (String str){
-    //     int numiricalStr = 0;
-    //     for(int i = 0; i < str.length(); i++){
-    //          numiricalStr += str.charAt(i);
-    //     }
-    //     return numiricalStr;
-    // }
+    public static int numiricalStr (String str){
+        int numiricalStr = 0;
+        for(int i = 0; i < str.length(); i++){
+             numiricalStr += str.charAt(i);
+        }
+        return numiricalStr;
+    }
 }
